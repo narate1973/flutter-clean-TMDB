@@ -17,7 +17,18 @@ class MovieListCubit extends Cubit<MovieListState> {
         _getShowingMovieUseCase = getShowingMovieUseCase,
         super(MovieListInitial());
 
+  bool _isPopMovie = true;
+
+  Future<void> getMovieList() async {
+    if (_isPopMovie) {
+      await getPopMovie();
+    } else {
+      await getShowingMovie();
+    }
+  }
+
   Future<void> getShowingMovie() async {
+    _isPopMovie = false;
     emit(MovieListLoading());
 
     final result = await _getShowingMovieUseCase();
@@ -32,6 +43,7 @@ class MovieListCubit extends Cubit<MovieListState> {
   }
 
   Future<void> getPopMovie() async {
+    _isPopMovie = true;
     emit(MovieListLoading());
 
     final result = await _getMovieListUseCase();
