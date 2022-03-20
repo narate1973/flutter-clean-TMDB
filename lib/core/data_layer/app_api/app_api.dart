@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:nutthemovie/core/remote_datasource/app_api/log_interceptor.dart';
 
+import '../../data_layer/app_api/log_interceptor.dart';
 import 'error_handler_interceptor.dart';
 
 class AppApi {

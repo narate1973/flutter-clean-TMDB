@@ -19,14 +19,15 @@ class MovieDetailCubit extends Cubit<MovieDetailState> {
     final result = await _getMovieCastUseCase(movieEntity.movieID);
     result.fold(
       (l) => emit(MovieDetailFailed()),
-      (r) => emit(MovieDetailSuccess(
-        castList: r.castList,
-        title: movieEntity.title,
-        imageURL: movieEntity.thumbnailURL,
-        rating: movieEntity.rating,
-        overview: movieEntity.overview,
-      ))
+      (r) => emit(
+        MovieDetailSuccess(
+          castList: r.castList,
+          title: movieEntity.title,
+          imageURL: movieEntity.thumbnailURL,
+          rating: movieEntity.rating,
+          overview: movieEntity.overview,
+        ),
+      ),
     );
-
   }
 }

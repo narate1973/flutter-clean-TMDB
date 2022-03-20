@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:nutthemovie/core/remote_datasource/app_api/app_api.dart';
+
+import 'app_api/app_api.dart';
 
 abstract class RemoteDatasource {
   static final AppApi _appApi = AppApi();

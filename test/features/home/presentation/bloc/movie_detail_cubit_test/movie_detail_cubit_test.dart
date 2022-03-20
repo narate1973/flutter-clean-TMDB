@@ -22,7 +22,6 @@ void main() {
   });
 
   const tCastEntity = CastListEntity.mock;
-  const tMovieID = 'movieID';
   const tMovieEntity = MovieEntity.mock;
   final tMovieDetailSuccess = MovieDetailSuccess(
     castList: const [CastEntity.mock],
@@ -33,20 +32,6 @@ void main() {
   );
 
   group('GetMovieCastUseCase by MovieDetailCubit', () {
-    blocTest(
-      'should get data from GetMovieCastUseCase',
-      build: () {
-        when(mockGetMovieCastUseCase(any)).thenAnswer((_) async => const Right(tCastEntity));
-        return cubit;
-      },
-      act: (MovieDetailCubit cubit) {
-        cubit.fetchDetail(movieEntity: tMovieEntity);
-      },
-      verify: (_) {
-        verify(mockGetMovieCastUseCase(tMovieID));
-      },
-    );
-
     blocTest(
       'should emit [MovieDetailLoading, MovieDetailSuccess] when mockGetShowingMovieUseCase is gotten successfully',
       build: () {
@@ -65,7 +50,7 @@ void main() {
     blocTest(
       'should emit [MovieDetailLoading, MovieDetailFailed] when mockGetShowingMovieUseCase is gotten unsuccessfully',
       build: () {
-        when(mockGetMovieCastUseCase(any)).thenAnswer((_) async =>  Left(ServerFailure()));
+        when(mockGetMovieCastUseCase(any)).thenAnswer((_) async => Left(ServerFailure()));
         return cubit;
       },
       act: (MovieDetailCubit cubit) {

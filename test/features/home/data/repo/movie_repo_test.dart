@@ -33,8 +33,9 @@ void main() {
   group('movieRepo.getMovieCast()', () {
     test(
       'should get CastListEntity when datasource call successfully',
-          () async {
-        when(mockMovieRemoteDatasource.getMovieCredit(movieID: anyNamed('movieID'))).thenAnswer((_) async => const Right(tCreditResponse));
+      () async {
+        when(mockMovieRemoteDatasource.getMovieCredit(movieID: anyNamed('movieID')))
+            .thenAnswer((_) async => tCreditResponse);
 
         final result = await movieRepoImpl.getMovieCast(movieID: tMovieID);
 
@@ -45,9 +46,9 @@ void main() {
 
     test(
       'should get internalException when datasource call unsuccessfully',
-          () async {
+      () async {
         when(mockMovieRemoteDatasource.getMovieCredit(movieID: anyNamed('movieID')))
-            .thenAnswer((_) async => const Left(InternalErrorException()));
+            .thenThrow(const InternalErrorException());
 
         final result = await movieRepoImpl.getMovieCast(movieID: tMovieID);
 
@@ -60,8 +61,8 @@ void main() {
   group('movieRepo.getShowingMovie()', () {
     test(
       'should get tMovieEntity when datasource call successfully',
-          () async {
-        when(mockMovieRemoteDatasource.getShowingMovie()).thenAnswer((_) async => const Right(tTwo));
+      () async {
+        when(mockMovieRemoteDatasource.getShowingMovie()).thenAnswer((_) async => tTwo);
 
         final result = await movieRepoImpl.getShowingMovie();
 
@@ -72,9 +73,8 @@ void main() {
 
     test(
       'should get internalException when datasource call unsuccessfully',
-          () async {
-        when(mockMovieRemoteDatasource.getShowingMovie())
-            .thenAnswer((_) async => const Left(InternalErrorException()));
+      () async {
+        when(mockMovieRemoteDatasource.getShowingMovie()).thenThrow(const InternalErrorException());
 
         final result = await movieRepoImpl.getShowingMovie();
 
@@ -88,7 +88,7 @@ void main() {
     test(
       'should get tMovieEntity when datasource call successfully',
       () async {
-        when(mockMovieRemoteDatasource.getPopMovie()).thenAnswer((_) async => const Right(tTwo));
+        when(mockMovieRemoteDatasource.getPopMovie()).thenAnswer((_) async => tTwo);
 
         final result = await movieRepoImpl.getPopMovie();
 
@@ -100,8 +100,7 @@ void main() {
     test(
       'should get internalException when datasource call unsuccessfully',
       () async {
-        when(mockMovieRemoteDatasource.getPopMovie())
-            .thenAnswer((_) async => const Left(InternalErrorException()));
+        when(mockMovieRemoteDatasource.getPopMovie()).thenThrow(const InternalErrorException());
 
         final result = await movieRepoImpl.getPopMovie();
 

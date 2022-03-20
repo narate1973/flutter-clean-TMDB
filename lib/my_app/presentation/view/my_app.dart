@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nutthemovie/core/remote_datasource/app_api/app_api.dart';
+import '../../../core/data_layer/app_api/app_api.dart';
 import '../../../core/injection.dart' as di;
 import '../../../features/home/presentation/view/page/home_page.dart';
 

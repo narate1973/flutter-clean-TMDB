@@ -2,15 +2,14 @@
 // in nutthemovie/test/features/home/data/repo/movie_repo_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
-import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:nutthemovie/core/group_data/two.dart' as _i5;
+import 'package:nutthemovie/core/core.dart' as _i2;
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/movie_remote_datasource.dart'
-    as _i3;
+    as _i4;
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_credit_response.dart'
-    as _i8;
+    as _i3;
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_detail_response.dart'
     as _i7;
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_list_response.dart'
@@ -26,38 +25,42 @@ import 'package:nutthemovie/features/home/data/datasource/remote_datasource/resp
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
-class _FakeEither_0<L, R> extends _i1.Fake implements _i2.Either<L, R> {}
+class _FakeTwo_0<A, B> extends _i1.Fake implements _i2.Two<A, B> {}
+
+class _FakeMovieCreditResponse_1 extends _i1.Fake
+    implements _i3.MovieCreditResponse {}
 
 /// A class which mocks [MovieRemoteDatasource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockMovieRemoteDatasource extends _i1.Mock
-    implements _i3.MovieRemoteDatasource {
+    implements _i4.MovieRemoteDatasource {
   MockMovieRemoteDatasource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>
+  _i5.Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>
       getPopMovie() => (super.noSuchMethod(Invocation.method(#getPopMovie, []),
-          returnValue: Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>.value(
-              _FakeEither_0<Exception,
-                  _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>())) as _i4
-          .Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>);
+          returnValue:
+              Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>.value(
+                  _FakeTwo_0<_i6.MovieListResponse,
+                      List<_i7.MovieDetailResponse>>())) as _i5
+          .Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>);
   @override
-  _i4.Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>
-      getShowingMovie() => (super.noSuchMethod(Invocation.method(#getShowingMovie, []),
-          returnValue: Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>.value(
-              _FakeEither_0<Exception,
-                  _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>())) as _i4
-          .Future<_i2.Either<Exception, _i5.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>>);
+  _i5.Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>
+      getShowingMovie() => (super.noSuchMethod(
+          Invocation.method(#getShowingMovie, []),
+          returnValue:
+              Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>.value(
+                  _FakeTwo_0<_i6.MovieListResponse,
+                      List<_i7.MovieDetailResponse>>())) as _i5
+          .Future<_i2.Two<_i6.MovieListResponse, List<_i7.MovieDetailResponse>>>);
   @override
-  _i4.Future<_i2.Either<Exception, _i8.MovieCreditResponse>> getMovieCredit(
-          {String? movieID}) =>
+  _i5.Future<_i3.MovieCreditResponse> getMovieCredit({String? movieID}) =>
       (super.noSuchMethod(
               Invocation.method(#getMovieCredit, [], {#movieID: movieID}),
-              returnValue:
-                  Future<_i2.Either<Exception, _i8.MovieCreditResponse>>.value(
-                      _FakeEither_0<Exception, _i8.MovieCreditResponse>()))
-          as _i4.Future<_i2.Either<Exception, _i8.MovieCreditResponse>>);
+              returnValue: Future<_i3.MovieCreditResponse>.value(
+                  _FakeMovieCreditResponse_1()))
+          as _i5.Future<_i3.MovieCreditResponse>);
 }
