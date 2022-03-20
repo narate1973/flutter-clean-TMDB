@@ -43,8 +43,8 @@ Future<void> main() {
     // ..buildFlavor =
     //     'dev' // uncomment when using build flavor and check android/ios flavor setup see android file android\app\build.gradle
     ..targetDeviceId =
-        '92f5dcb0'
-        //'emulator-5554' // uncomment to run tests on all connected devices or set specific device target id
+        // '92f5dcb0'
+        'emulator-5554' // uncomment to run tests on all connected devices or set specific device target id
     // ..tagExpression = "@smoke" // uncomment to see an example of running scenarios based on tag expressions
     ..logFlutterProcessOutput =
         true; // uncomment to see command invoked to start the flutter test app
