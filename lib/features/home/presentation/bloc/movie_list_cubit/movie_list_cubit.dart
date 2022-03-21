@@ -30,7 +30,6 @@ class MovieListCubit extends Cubit<MovieListState> {
   Future<void> getShowingMovie() async {
     _isPopMovie = false;
     emit(MovieListLoading());
-
     final result = await _getShowingMovieUseCase();
     result.fold(
       (l) {
@@ -45,7 +44,6 @@ class MovieListCubit extends Cubit<MovieListState> {
   Future<void> getPopMovie() async {
     _isPopMovie = true;
     emit(MovieListLoading());
-
     final result = await _getMovieListUseCase();
     result.fold(
       (l) {
