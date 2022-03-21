@@ -23,7 +23,7 @@ class MovieDetailCubit extends Cubit<MovieDetailState> {
         MovieDetailSuccess(
           castList: r.castList,
           title: movieEntity.title,
-          imageURL: movieEntity.thumbnailURL,
+          imageURL: movieEntity.posterURL,
           rating: movieEntity.rating,
           overview: movieEntity.overview,
         ),

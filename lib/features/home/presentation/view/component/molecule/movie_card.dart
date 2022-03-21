@@ -26,7 +26,7 @@ class MovieCard extends StatelessWidget {
           children: [
             AppNetWorkImage.rect(
               movieEntity.thumbnailURL,
-              width: 70,
+              width: 110,
               height: 110,
             ),
             const SizedBox(width: 16),

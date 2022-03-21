@@ -19,7 +19,8 @@ class MovieListEntity extends Equatable {
       movieList: List.from(
         movieList.results.mapIndexed(
           (index, movie) => MovieEntity(
-            thumbnailURL: movie.posterPath,
+            posterURL: movie.posterPath,
+            thumbnailURL: movie.backDropPath,
             title: movie.title,
             rating: movie.voteAverage,
             genres: _getStringFromGenre(movieDetailList[index]),
@@ -46,6 +47,7 @@ class MovieListEntity extends Equatable {
 
 class MovieEntity extends Equatable {
   final String thumbnailURL;
+  final String posterURL;
   final String title;
   final double rating;
   final String genres;
@@ -59,6 +61,7 @@ class MovieEntity extends Equatable {
     required this.genres,
     required this.overview,
     required this.movieID,
+    required this.posterURL,
   });
 
   static const mock = MovieEntity(
@@ -68,6 +71,7 @@ class MovieEntity extends Equatable {
     genres: '',
     overview: '',
     movieID: '',
+    posterURL: '',
   );
 
   @override

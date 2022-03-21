@@ -24,6 +24,7 @@ class Result extends Equatable {
     required this.posterPath,
     required this.title,
     required this.voteAverage,
+    required this.backDropPath,
   });
 
   final int id;
@@ -31,6 +32,7 @@ class Result extends Equatable {
   final String posterPath;
   final String title;
   final double voteAverage;
+  final String backDropPath;
 
   static const mock = Result(
     id: 11,
@@ -38,6 +40,7 @@ class Result extends Equatable {
     posterPath: '',
     title: '',
     voteAverage: 1.2,
+    backDropPath: '',
   );
 
   factory Result.fromMap(Map<String, dynamic> json) => Result(
@@ -46,6 +49,7 @@ class Result extends Equatable {
         posterPath: convertImageURL(json['poster_path']),
         title: json['title'],
         voteAverage: json['vote_average'].toDouble(),
+        backDropPath: convertImageURL(json['backdrop_path']),
       );
 
   @override
