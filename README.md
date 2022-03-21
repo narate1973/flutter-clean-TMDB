@@ -29,7 +29,7 @@ This project is to demonstrate flutter with clean architecture.
 # Getting Started
 ## First time run
 ```
-git clone https://github.com/narate1973/nutthemovie.git
+git clone https://github.com/narate1973/flutter-clean-TMDB.git
 cd nutthemovie
 flutter pub get
 flutter run
