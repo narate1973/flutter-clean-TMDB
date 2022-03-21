@@ -8,7 +8,7 @@ import 'package:nutthemovie/features/home/data/datasource/remote_datasource/movi
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_credit_response.dart';
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_detail_response.dart';
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/response/movie_list_response.dart';
-import 'package:nutthemovie/features/home/data/repository/movie_repo.dart';
+import 'package:nutthemovie/features/home/data/repository/movie_repo_impl.dart';
 import 'package:nutthemovie/features/home/domain/entity/cast_entity.dart';
 import 'package:nutthemovie/features/home/domain/entity/movie_list_entity.dart';
 

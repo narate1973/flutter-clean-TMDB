@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:nutthemovie/features/home/data/datasource/remote_datasource/movie_remote_datasource.dart';
-import 'package:nutthemovie/features/home/data/repository/movie_repo.dart';
+import 'package:nutthemovie/features/home/data/repository/movie_repo_impl.dart';
 import 'package:nutthemovie/features/home/domain/repository/movie_repo.dart';
 import 'package:nutthemovie/features/home/domain/usecase/get_movie_cast_usecase.dart';
 import 'package:nutthemovie/features/home/domain/usecase/get_pop_movie_usecase.dart';
