@@ -1,6 +1,6 @@
 # Nut the movie
 
-This project is to demonstrate flutter with clean architecture.
+Atomic design, bloc pattern, unit testing, automation testing, clean architecture
 
 ## Pattern of state management
 
